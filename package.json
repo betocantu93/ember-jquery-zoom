@@ -1,6 +1,6 @@
 {
   "name": "ember-jquery-zoom",
-  "version": "0.0.5",
+  "version": "0.0.51",
   "author": "Alberto Cantu",
   "description": "Ember wrapper from Jack L Moore jquery-zoom http://www.jacklmoore.com/zoom/ open-source lib",
   "keywords": [
