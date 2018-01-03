@@ -8,10 +8,6 @@ var MergeTrees = require('broccoli-merge-trees');
 module.exports = {
   name: 'ember-jquery-zoom',
 
-  isDevelopingAddon() {
-    return true;
-  },
-
   included: function(){
 
     this._super.included.apply(this, arguments);
@@ -24,7 +20,7 @@ module.exports = {
   },
 
   treeForVendor(vendorTree) {
-    console.log(vendorTree);
+    
     return new Funnel(path.join(this.project.root, 'node_modules', 'jquery-zoom'), {
         destDir: 'jquery-zoom'
       });

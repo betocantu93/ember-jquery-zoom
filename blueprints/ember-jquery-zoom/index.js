@@ -3,7 +3,6 @@ module.exports = {
   normalizeEntityName() {
   },
   afterInstall: function() {
-    var that = this;
 
     return this.addPackageToProject('jquery-zoom');
 
