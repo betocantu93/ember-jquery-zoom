@@ -4,6 +4,7 @@
 var path = require('path');
 var Funnel = require('broccoli-funnel');
 var MergeTrees = require('broccoli-merge-trees');
+var map = require('broccoli-stew').map;
 
 module.exports = {
   name: 'ember-jquery-zoom',
@@ -20,9 +21,12 @@ module.exports = {
   },
 
   treeForVendor(vendorTree) {
-    
-    return new Funnel(path.join(this.project.root, 'node_modules', 'jquery-zoom'), {
-        destDir: 'jquery-zoom'
-      });
+
+    let libs = new Funnel(path.join(this.project.root, 'node_modules', 'jquery-zoom'), {
+          destDir: 'jquery-zoom'
+        });
+    libs = map(libs, (content) => `if (typeof FastBoot === 'undefined') { ${content} }`)
+    return libs;
+
   },
 };
